@@ -87,18 +87,18 @@ def get_int_from_user():
         print(" ")
         try:
             page_num = int(user_given_page)
+
+            if page_num <= 0:
+                print("Positive number, love. As in more than 0.")
+                show_try_again_msg()
+            else:
+                got_int = True
         except ValueError:
             print(f"Whole positive numbers are 7, 13, 420, and not {user_given_page}.")
             show_try_again_msg()
         except Exception:
             print("I don't even know what you did, you naughty so and so...")
             show_try_again_msg()
-
-        if page_num <= 0:
-            print(f"Whole positive numbers are 7, 13, 420, and not {user_given_page}.")
-            show_try_again_msg()
-        else:
-            got_int = True
 
     return page_num
 
