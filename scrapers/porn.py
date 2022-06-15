@@ -1,3 +1,4 @@
+from time import sleep
 from helpers import format_and_clean_text, make_soup
 from datetime import datetime
 
@@ -53,44 +54,56 @@ def find_next_page_link(link_arr):
 
 
 def initial_greetings():
-    print("Awesome! You'll see that writing wont be as hard as you when we're done.")
     print(
-        "First, tell me how many chapters of epic fan fiction do you want me to write?"
+        "\nAwesome! You'll see that writing wont be as hard as you when we're done.\n"
     )
+    sleep(3)
+    print(
+        "First, tell me how many chapters of epic fan fiction do you want me to write?\n"
+    )
+    sleep(1)
     print("Quick note: I will need a word or phrase from you for every chapter.")
+    sleep(2)
     print(
-        "So if you give 5, you will need to -- putin -- 5 words later for inspiration."
+        "So if you give 5, you will need to -- putin -- 5 words later for inspiration.\n\n"
     )
-    print(
-        "Don't go crazy if you don't want to go all the way, honey. This is not Ukraine."
-    )
-    print("Cool?")
-    input("Press any key to continue.")
+    sleep(3)
+    print("Don't go crazy if you don't want to go all the way, honey.")
+    print("This is not Ukraine.\n")
+    sleep(2)
+    input("Cool? Press any key to continue.\n")
+
+
+def show_try_again_msg():
+    sleep(1)
+    print("Try again.\n")
+    sleep(1)
 
 
 def get_int_from_user():
     got_int = False
     while not got_int:
-        user_given_page = input("Whole positive number, please: ")
+        user_given_page = input("Whole positive number, please: \n\n\n")
         try:
             page_num = int(user_given_page)
             got_int = True
         except ValueError:
             print(f"Whole positive numbers are 7, 13, 420, and not {user_given_page}.")
-            print("Try again.")
+            show_try_again_msg()
         except Exception:
             print("I don't even know what you did, you naughty so and so...")
-            print("Try again.")
+            show_try_again_msg()
 
     return page_num
 
 
 def inspire_words():
-    print("----")
-    print("Superb. Now it's time for inspiration.")
+    print("Superb. Now it's time for inspiration.\n")
+    sleep(2)
     print("Quick note: think of strong, emotional words...")
-    print("Cock, cum, mom...")
-    print("Ready?")
+    sleep(2)
+    print("Cock, cum, mom...\n")
+    sleep(2)
 
 
 def scrape_and_write():
@@ -103,11 +116,11 @@ def scrape_and_write():
     while current_page <= last_page:
         if current_page == 1:
             inspire_words()
-            search = input("Your word: ").capitalize()
+            search = input("Ready? Your word: \n").capitalize()
         elif current_page == last_page:
-            search = input("And the last one: ")
+            search = input("And the last one: \n")
         else:
-            search = input("One more: ")
+            search = input("One more: \n")
 
         porn_headlines = get_porn_headlines(current_url)
         filtered_porn_headlines = filter_porn_headlines(search, porn_headlines)
@@ -119,7 +132,9 @@ def scrape_and_write():
         current_url = find_next_page_link(all_links)
         current_page += 1
 
-    print("We have arrived!")
-    print("You can now forget Putin with porn!")
+    print("*** We have arrived! ***\n")
+    sleep(3)
+    print("You can now forget Putin with porn!\n")
+    sleep(2)
     print("New hot novel is now in your computer!")
-    print("Check out the latest chapter in 69_Shades.txt!")
+    print("Check out the latest chapter in 69_Shades.txt!\n")
