@@ -26,7 +26,7 @@ def filter_porn_headlines(key_word, headline_str_arr):
 
 
 def make_50_shades_manuscript(headline_arr, chapter_num, chapter_name):
-    with open(f"scraped_text/69_Shades.txt", "a", encoding="utf-8") as file:
+    with open("scraped_text/69_Shades.txt", "a", encoding="utf-8") as file:
         date_of_execution = datetime.now().strftime("%Y")
 
         if chapter_num == 1:
