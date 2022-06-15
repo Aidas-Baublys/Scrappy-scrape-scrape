@@ -34,9 +34,9 @@ with open("scraped_text/putin_news.txt", "a", encoding="utf-8") as file:
     )
 
     for i, headline in enumerate(putin_headlines):
-        file.write(f"HEADLINE {i + 1}: {headline} \n")
-        file.write(f"STORY LEAD: {putin_story_leads[i]} \n")
-        file.write("------- \n")
+        file.write(f"HEADLINE {i + 1}: {headline}\n")
+        file.write(f"STORY LEAD: {putin_story_leads[i]}\n")
+        file.write("-------\n")
 
     file.close()
 
