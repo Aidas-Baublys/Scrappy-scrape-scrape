@@ -1,5 +1,5 @@
 from time import sleep
-from helpers import format_and_clean_text, make_soup
+from helpers.helpers import format_and_clean_text, make_soup
 from datetime import datetime as date_func
 
 
