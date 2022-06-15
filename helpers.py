@@ -18,6 +18,7 @@ def format_and_clean_text(text):
                 or char == "."
                 or char == ":"
                 or char == "-"
+                or char == "?"
                 or char == "\u2013"
             )
         ]
