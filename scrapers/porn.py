@@ -32,7 +32,7 @@ def make_50_shades_manuscript(headline_arr, chapter_num, chapter_name):
         if chapter_num == 1:
             file.write(f"\nWritten with passion in {date_of_execution}\n\n")
             file.write(
-                f"Inspired by many amazing artist and creators from {porn_url}\n\n"
+                f"Inspired by many amazing artist and creators from {porn_url}\n"
             )
 
         file.write(f"\n\nChapter {chapter_num}: {chapter_name}\n\n")
@@ -83,16 +83,22 @@ def show_try_again_msg():
 def get_int_from_user():
     got_int = False
     while not got_int:
-        user_given_page = input("Whole positive number, please: \n\n\n")
+        user_given_page = input("Whole positive number, please: ")
+        print(" ")
         try:
             page_num = int(user_given_page)
-            got_int = True
         except ValueError:
             print(f"Whole positive numbers are 7, 13, 420, and not {user_given_page}.")
             show_try_again_msg()
         except Exception:
             print("I don't even know what you did, you naughty so and so...")
             show_try_again_msg()
+
+        if page_num <= 0:
+            print(f"Whole positive numbers are 7, 13, 420, and not {user_given_page}.")
+            show_try_again_msg()
+        else:
+            got_int = True
 
     return page_num
 
