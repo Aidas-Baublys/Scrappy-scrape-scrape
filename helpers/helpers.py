@@ -1,7 +1,7 @@
+import yaml
 from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
-import yaml
 
 
 def get_config_as_dict():
