@@ -1,6 +1,6 @@
 # Scrappy-scrape-scrape
 
-![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](<https://github.com/Aidas-Baublys/Scrappy-scrape-scrape/blob/LICENSE.md>)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Aidas-Baublys/Scrappy-scrape-scrape/blob/LICENSE.md)
 
 <!-- TOC -->
 * [Scrappy-scrape-scrape](#Scrappy-scrape-scrape)
