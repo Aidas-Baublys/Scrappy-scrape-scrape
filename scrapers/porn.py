@@ -68,7 +68,7 @@ def initial_greetings():
         "So if you give 5, you will need to -- putin -- 5 words later for inspiration.\n"
     )
     sleep(4)
-    print("If you give 500, well... Gonna write long time\n")
+    print("If you give 500, well... Gonna write long time.\n")
     sleep(4)
     print("Don't go crazy if you don't want to go all the way, honey.")
     sleep(2)
@@ -150,7 +150,7 @@ def scrape_and_write():
         current_url = find_next_page_link(all_links)
         current_page += 1
 
-    print("*** We have arrived! ***\n")
+    print("\n*** We have arrived! ***\n")
     sleep(3)
     print("You can now forget Putin with porn!\n")
     sleep(2)
