@@ -1,13 +1,17 @@
 import logging
 from time import sleep
+from helpers.helpers import get_config_as_dict
 
 from scrapers.porn import scrape_and_write
 from scrapers.putin_news import keeping_up_with_putin
 
+config = get_config_as_dict()
 
-log_format = "[%(levelname)s]: %(asctime)s:\n%(message)s\n----"
+log_filename = config["log_config"]["filename"]
+log_format = config["log_config"]["log_format"]
+
 logging.basicConfig(
-    filename="logs/all_logs.log", level=logging.DEBUG, format=log_format
+    filename=log_filename, level=logging.DEBUG, format=log_format, filemode="a"
 )
 
 

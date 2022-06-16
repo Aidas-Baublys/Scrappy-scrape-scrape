@@ -1,15 +1,23 @@
 from time import sleep
-from helpers.helpers import format_and_clean_text, make_soup
+from helpers.helpers import format_and_clean_text, get_config_as_dict, make_soup
 from datetime import datetime
 
 
-porn_url = "https://www.pornhub.com"
-start_page = 1
+config = get_config_as_dict()
+
+porn_url = config["urls"]["porn_url"]
+enc = config["encoding"]
+start_page = config["scrape_config"]["porn"]["start_page"]
+h_elam = config["scrape_config"]["porn"]["headline_el"]
+h_class = config["scrape_config"]["porn"]["headline_class"]
+l_query = config["scrape_config"]["porn"]["next_page_href_query"]
+l_attr = config["scrape_config"]["porn"]["link_attr"]
+attr = config["scrape_config"]["porn"]["href"]
 
 
 def get_porn_headlines(url):
     soup = make_soup(url)
-    return soup.find_all("span", class_="title")
+    return soup.find_all(h_elam, class_=h_class)
 
 
 def filter_porn_headlines(key_word, headline_str_arr):
@@ -26,10 +34,10 @@ def filter_porn_headlines(key_word, headline_str_arr):
 
 
 def make_50_shades_manuscript(headline_arr, chapter_num, chapter_name):
-    with open("scraped_text/69_Shades.txt", "a", encoding="utf-8") as file:
+    with open("scraped_text/69_Shades.txt", "a", encoding=enc) as file:
         date_of_execution = datetime.now().strftime("%Y")
 
-        if chapter_num == 1:
+        if chapter_num == start_page:
             file.write(f"\nWritten with passion in {date_of_execution}\n\n")
             file.write(
                 f"Inspired by many amazing artist and creators from {porn_url}\n"
@@ -46,10 +54,10 @@ def make_50_shades_manuscript(headline_arr, chapter_num, chapter_name):
 def find_next_page_link(link_arr):
     current_page = start_page
     for link in link_arr:
-        if "/video" in link["href"] and link.text.isdigit():
+        if l_query in link[l_attr] and link.text.isdigit():
             page_num = int(link.text)
             if page_num > current_page:
-                query = link["href"]
+                query = link[l_attr]
                 return f"{porn_url}{query}"
 
 
@@ -145,7 +153,7 @@ def scrape_and_write():
         )
 
         porn_soup = make_soup(current_url)
-        all_links = porn_soup.find_all("a", href=True)
+        all_links = porn_soup.find_all("a", href=attr)
 
         current_url = find_next_page_link(all_links)
         current_page += 1

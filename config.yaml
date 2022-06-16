@@ -1,0 +1,27 @@
+name: Putin & Porn console app
+version: "1"
+log_config:
+  filename: logs/all_logs.log
+  log_format: "[%(levelname)s]: %(asctime)s:\n%(message)s\n----"
+urls:
+  news_url: https://www.delfi.lt
+  porn_url: https://www.pornhub.com
+scrape_config:
+  news:
+    headline_el: h3
+    headline_class: headline-title
+    search_word: Putin
+    link_attr: href
+    story_lead_el: div
+    story_lead_class: delfi-article-lead
+    file_path: scraped_text/putin_news.txt
+  porn:
+    start_page: 1
+    headline_el: span
+    headline_class: title
+    file_path: scraped_text/69_Shades.txt
+    link_attr: href
+    href: True
+    next_page_href_query: /video
+encoding: utf-8
+html_parser: lxml
