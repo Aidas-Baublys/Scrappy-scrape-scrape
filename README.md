@@ -42,28 +42,22 @@ bash <(curl -s https://raw.githubusercontent.com/Aidas-Baublys/Scrappy-scrape-sc
 3. Ensure pipenv is installed:
 
    ```bash
-   pip install --upgrade pipenv --user
+   py -m pip install --upgrade pipenv --user
    ```
 
 4. Install dependencies:
 
    ```bash
-   pipenv install
+   py -m pipenv install
    ```
 
-5. Activate virtual environment:
+5. Run project:
 
    ```bash
-   pipenv shell
+   py main.py
    ```
 
-6. Run project:
-
-   ```bash
-   python ./Scrappy-scrape-scrape/main.py
-   ```
-
-7. Enjoy.
+6. Enjoy.
 
 ## Requirements
 
