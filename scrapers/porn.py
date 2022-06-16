@@ -68,9 +68,15 @@ def initial_greetings():
         "So if you give 5, you will need to -- putin -- 5 words later for inspiration.\n"
     )
     sleep(4)
+    print("If you give 500, well... Gonna write long time\n")
+    sleep(4)
     print("Don't go crazy if you don't want to go all the way, honey.")
     sleep(2)
     print("This is not Ukraine.\n")
+    sleep(2)
+    print("Also, some words are not in porn video titles.")
+    sleep(2)
+    print("I know, I'm surprised as well.")
     sleep(2)
     input("Cool? (Press any key to continue)\n")
 
@@ -106,7 +112,7 @@ def get_int_from_user():
 
 
 def inspire_words():
-    print("Superb. Now it's time for inspiration.\n")
+    print("\nSuperb. Now it's time for inspiration.\n")
     sleep(2)
     print("Quick note: think of strong, emotional words...")
     sleep(2)
