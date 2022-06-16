@@ -30,6 +30,12 @@ def start_and_greet():
     sleep(2)
     print("It will help your mind -- get off -- of Putin...\n")
     sleep(2)
+    print(
+        "Quick note: if in the end you get empty files or something takes too long..."
+    )
+    sleep(1)
+    print("Not my problem. Either your internet or the sites are broken.")
+    sleep(2)
     input("Ready? (Press any key to continue)\n")
 
 
