@@ -1,7 +1,8 @@
 name: Putin & Porn console app
 version: "1"
 log_config:
-  filename: logs/all_logs.log
+  dir: logs
+  filename: main.log
   log_format: "[%(levelname)s]: %(asctime)s:\n%(message)s\n----"
 urls:
   news_url: https://www.delfi.lt

@@ -1,6 +1,11 @@
 from time import sleep
-from helpers.helpers import format_and_clean_text, get_config_as_dict, make_soup
 from datetime import datetime
+from helpers.helpers import (
+    format_and_clean_text,
+    get_config_as_dict,
+    make_soup,
+    porn_dir,
+)
 
 
 config = get_config_as_dict()
@@ -34,7 +39,7 @@ def filter_porn_headlines(key_word, headline_str_arr):
 
 
 def make_50_shades_manuscript(headline_arr, chapter_num, chapter_name):
-    with open("scraped_text/69_Shades.txt", "a", encoding=enc) as file:
+    with open(porn_dir, "a", encoding=enc) as file:
         date_of_execution = datetime.now().strftime("%Y")
 
         if chapter_num == start_page:

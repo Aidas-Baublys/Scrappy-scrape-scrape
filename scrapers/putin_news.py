@@ -1,5 +1,10 @@
-from helpers.helpers import format_and_clean_text, get_config_as_dict, make_soup
 from datetime import datetime as date_func
+from helpers.helpers import (
+    format_and_clean_text,
+    get_config_as_dict,
+    make_soup,
+    news_dir,
+)
 
 
 config = get_config_as_dict()
@@ -38,7 +43,7 @@ def fill_story_leads():
 
 
 def write_putin_news():
-    with open("scraped_text/putin_news.txt", "a", encoding=enc) as file:
+    with open(news_dir, "a", encoding=enc) as file:
         datetime = date_func.now()
         date_of_execution = datetime.strftime("%Y-%m-%d")
         time_of_execution = datetime.strftime("%H:%M:%S")
