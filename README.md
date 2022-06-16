@@ -55,19 +55,13 @@ bash <(curl -s https://raw.githubusercontent.com/Aidas-Baublys/Scrappy-scrape-sc
    pipenv shell
    ```
 
-6. Navigate back to project root folder:
-
-   ```bash
-   cd ..
-   ```
-
-7. Run project:
+6. Run project:
 
    ```bash
    python ./Scrappy-scrape-scrape/main.py
    ```
 
-8. Enjoy.
+7. Enjoy.
 
 ## Requirements
 
