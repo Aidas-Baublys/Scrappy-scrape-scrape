@@ -54,7 +54,7 @@ bash <(curl -s https://raw.githubusercontent.com/Aidas-Baublys/Scrappy-scrape-sc
 5. Run project:
 
    ```bash
-   py main.py
+   py -m pipenv run python main.py
    ```
 
 6. Enjoy.
