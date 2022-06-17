@@ -36,7 +36,7 @@ bash <(curl -s https://raw.githubusercontent.com/Aidas-Baublys/Scrappy-scrape-sc
 2. Navigate into project:
 
    ```bash
-   cd Scrappy-scrape-scrape/
+   cd Scrappy-scrape-scrape
    ```
 
 3. Ensure pipenv is installed:
